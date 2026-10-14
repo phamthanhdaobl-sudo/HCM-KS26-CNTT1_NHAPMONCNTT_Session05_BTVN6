@@ -54,6 +54,8 @@ Get-ChildItem -Path . -Filter *.log -File -Recurse |
 ## 5. Kết luận
 
 PowerShell giúp tìm kiếm file, lọc nội dung và tự động ghi báo cáo bằng cách kết hợp nhiều lệnh qua pipeline. Việc lựa chọn `Add-Content` đáp ứng yêu cầu ghi nối dữ liệu và bảo vệ nội dung báo cáo cũ.
+## 6. BẢNG SO SÁNH
+
 | Tiêu chí | PowerShell | Git Bash | CMD |
 |---|---|---|---|
 | **Môi trường** | Shell và ngôn ngữ kịch bản, tích hợp tốt với Windows; cũng có phiên bản chạy trên macOS và Linux. | Môi trường Bash được cung cấp cùng Git for Windows. | Trình thông dịch dòng lệnh truyền thống của Windows. |
