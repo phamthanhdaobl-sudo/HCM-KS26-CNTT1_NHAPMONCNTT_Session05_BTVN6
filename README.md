@@ -69,7 +69,7 @@ PowerShell giúp tìm kiếm file, lọc nội dung và tự động ghi báo c�
 | **Hệ điều hành** | Windows, macOS và Linux (PowerShell hiện đại). | Chủ yếu được sử dụng trên Windows thông qua Git for Windows; Bash cũng phổ biến trên Linux và macOS. | Chủ yếu dành cho Windows. |
 | **Điểm mạnh** | Quản trị Windows, xử lý dữ liệu có cấu trúc và tự động hóa tác vụ phức tạp. | Sử dụng các lệnh kiểu Unix/Linux, thao tác Git và làm việc với dự án phần mềm. | Đơn giản, nhẹ, phù hợp với các lệnh Windows truyền thống và file batch. |
 | **Hạn chế** | Cú pháp ban đầu có thể khó nhớ với người mới học. | Một số lệnh và đường dẫn khác với Windows; có thể cần chú ý khi kết hợp công cụ Windows. | Khả năng xử lý dữ liệu và tự động hóa phức tạp hạn chế hơn PowerShell. |
-## 7 Ví dụ phân biệt 3 công cụ
+## 7. Ví dụ phân biệt 3 công cụ
 1. PowerShell
 Tìm file và lọc nội dung bằng các lệnh PowerShell.
 Get-ChildItem -Recurse -Filter *.log -File |
