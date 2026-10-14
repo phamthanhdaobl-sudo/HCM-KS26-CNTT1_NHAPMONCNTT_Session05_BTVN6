@@ -54,7 +54,7 @@ Get-ChildItem -Path . -Filter *.log -File -Recurse |
 ## 5. Kết luận
 
 PowerShell giúp tìm kiếm file, lọc nội dung và tự động ghi báo cáo bằng cách kết hợp nhiều lệnh qua pipeline. Việc lựa chọn `Add-Content` đáp ứng yêu cầu ghi nối dữ liệu và bảo vệ nội dung báo cáo cũ.
-## 6. BẢNG SO SÁNH
+## 6. Bảng Phân tích và so sánh PowerShell, Git Bash và CMD
 
 | Tiêu chí | PowerShell | Git Bash | CMD |
 |---|---|---|---|
@@ -69,3 +69,31 @@ PowerShell giúp tìm kiếm file, lọc nội dung và tự động ghi báo c�
 | **Hệ điều hành** | Windows, macOS và Linux (PowerShell hiện đại). | Chủ yếu được sử dụng trên Windows thông qua Git for Windows; Bash cũng phổ biến trên Linux và macOS. | Chủ yếu dành cho Windows. |
 | **Điểm mạnh** | Quản trị Windows, xử lý dữ liệu có cấu trúc và tự động hóa tác vụ phức tạp. | Sử dụng các lệnh kiểu Unix/Linux, thao tác Git và làm việc với dự án phần mềm. | Đơn giản, nhẹ, phù hợp với các lệnh Windows truyền thống và file batch. |
 | **Hạn chế** | Cú pháp ban đầu có thể khó nhớ với người mới học. | Một số lệnh và đường dẫn khác với Windows; có thể cần chú ý khi kết hợp công cụ Windows. | Khả năng xử lý dữ liệu và tự động hóa phức tạp hạn chế hơn PowerShell. |
+4. Ví dụ phân biệt 3 công cụ
+Giả sử anh muốn tìm tất cả file .log và lọc các dòng chứa ERROR.
+1. PowerShell
+Tìm file và lọc nội dung bằng các lệnh PowerShell.
+Get-ChildItem -Recurse -Filter *.log -File |
+    Select-String -Pattern 'ERROR'
+
+
+
+2. Git Bash
+Kết hợp lệnh tìm file của Unix với grep.
+find . -type f -name "*.log" -exec grep -nH 'ERROR' {} +
+
+
+
+3. CMD
+Sử dụng lệnh Windows truyền thống để tìm file và lọc văn bản.
+for /r %f in (*.log) do @findstr /n /i "ERROR" "%f"
+
+
+Nếu viết lệnh trong file .bat hoặc .cmd, phải đổi %f thành %%f.
+
+
+Lưu ý: Các ví dụ trên dùng để tìm và lọc lỗi; chưa ghi kết quả vào báo cáo. Khi thực hiện đầy đủ bài tập, anh cần bổ sung phần ghi nối vào bao_cao_loi.txt và kiểm tra để tránh ghi trùng nếu chạy lại cùng bộ log.
+5. Kết luận
+- PowerShell: phù hợp nhất nếu bài tập yêu cầu quản trị hệ thống Windows bằng script và xử lý dữ liệu theo pipeline.
+- Git Bash: phù hợp khi muốn sử dụng lệnh quen thuộc của Linux/Unix và làm việc với Git.
+- CMD: phù hợp với các tác vụ Windows cơ bản và script batch đơn giản.
